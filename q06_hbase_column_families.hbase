@@ -1,0 +1,12 @@
+# Q6: Column-family data model and qualifiers
+create 'ProductCatalog', 'product', 'inventory', 'pricing'
+put 'ProductCatalog', 'P001', 'product:name', 'Wireless Mouse'
+put 'ProductCatalog', 'P001', 'product:brand', 'ExampleTech'
+put 'ProductCatalog', 'P001', 'inventory:warehouse_north', '25'
+put 'ProductCatalog', 'P001', 'inventory:warehouse_south', '14'
+put 'ProductCatalog', 'P001', 'pricing:currency', 'INR'
+put 'ProductCatalog', 'P001', 'pricing:amount', '799'
+get 'ProductCatalog', 'P001'
+scan 'ProductCatalog'
+# product, inventory and pricing are column families.
+# name, brand, warehouse_north, amount, etc. are qualifiers.

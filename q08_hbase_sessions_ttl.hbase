@@ -1,0 +1,9 @@
+# Q8: Session data with TTL (seconds)
+# 3600 seconds = one hour. TTL is configured on the column family.
+create 'UserSessions', {NAME => 'session', TTL => 3600}, {NAME => 'profile'}
+put 'UserSessions', 'SESSION#1001', 'session:user_id', 'U101'
+put 'UserSessions', 'SESSION#1001', 'session:last_seen', '2026-10-14T09:00:00Z'
+put 'UserSessions', 'SESSION#1001', 'profile:device', 'Android'
+get 'UserSessions', 'SESSION#1001'
+describe 'UserSessions'
+# Expired cells are made eligible for cleanup after TTL; physical removal may not be immediate.

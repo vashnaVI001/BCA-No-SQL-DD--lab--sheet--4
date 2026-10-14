@@ -1,0 +1,13 @@
+# Q3: Event logging table
+create 'EventLog', 'event', 'user', 'details'
+put 'EventLog', 'EVT#0001', 'event:timestamp', '2026-10-14T09:00:00Z'
+put 'EventLog', 'EVT#0001', 'event:type', 'LOGIN'
+put 'EventLog', 'EVT#0001', 'user:user_id', 'U101'
+put 'EventLog', 'EVT#0001', 'details:status', 'SUCCESS'
+put 'EventLog', 'EVT#0002', 'event:timestamp', '2026-10-14T09:05:00Z'
+put 'EventLog', 'EVT#0002', 'event:type', 'LOGOUT'
+put 'EventLog', 'EVT#0002', 'user:user_id', 'U102'
+put 'EventLog', 'EVT#0002', 'details:status', 'SUCCESS'
+get 'EventLog', 'EVT#0001'
+get 'EventLog', 'EVT#0002'
+scan 'EventLog'

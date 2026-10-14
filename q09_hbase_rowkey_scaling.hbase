@@ -1,0 +1,11 @@
+# Q9: Salted row keys to reduce hotspotting in a large write workload
+create 'Orders', 'order', 'customer'
+# Example salt buckets 00-03. Choose salt deterministically in the application.
+put 'Orders', '00#ORDER#100001', 'order:amount', '1499'
+put 'Orders', '01#ORDER#100002', 'order:amount', '2499'
+put 'Orders', '02#ORDER#100003', 'order:amount', '899'
+put 'Orders', '03#ORDER#100004', 'order:amount', '1999'
+put 'Orders', '00#ORDER#100001', 'customer:id', 'C101'
+scan 'Orders'
+# Salting spreads writes, but querying by order ID requires knowing/computing the salt
+# or scanning the possible buckets. Avoid monotonically increasing row keys for hot writes.

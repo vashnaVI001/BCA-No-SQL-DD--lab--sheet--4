@@ -1,0 +1,14 @@
+# Q2: HBase CRUD operations
+create 'Employee', 'info', 'job'
+put 'Employee', 'E101', 'info:name', 'Aman'
+put 'Employee', 'E101', 'info:department', 'IT'
+put 'Employee', 'E101', 'job:role', 'Developer'
+put 'Employee', 'E102', 'info:name', 'Riya'
+put 'Employee', 'E102', 'info:department', 'HR'
+get 'Employee', 'E101'
+scan 'Employee'
+put 'Employee', 'E101', 'job:role', 'Senior Developer'  # update a cell
+get 'Employee', 'E101'
+delete 'Employee', 'E102', 'info:department'
+deleteall 'Employee', 'E102'  # delete complete row
+scan 'Employee'

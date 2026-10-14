@@ -1,0 +1,30 @@
+# Q1: Student table, two column families, five records
+create 'Student', 'personal', 'academic'
+
+put 'Student', 'S101', 'personal:name', 'Aarav Sharma'
+put 'Student', 'S101', 'personal:city', 'Shamli'
+put 'Student', 'S101', 'academic:course', 'BCA'
+put 'Student', 'S101', 'academic:year', '3'
+
+put 'Student', 'S102', 'personal:name', 'Priya Verma'
+put 'Student', 'S102', 'personal:city', 'Dehradun'
+put 'Student', 'S102', 'academic:course', 'BCA'
+put 'Student', 'S102', 'academic:year', '2'
+
+put 'Student', 'S103', 'personal:name', 'Rahul Singh'
+put 'Student', 'S103', 'personal:city', 'Roorkee'
+put 'Student', 'S103', 'academic:course', 'BSc'
+put 'Student', 'S103', 'academic:year', '1'
+
+put 'Student', 'S104', 'personal:name', 'Neha Gupta'
+put 'Student', 'S104', 'personal:city', 'Haridwar'
+put 'Student', 'S104', 'academic:course', 'BCom'
+put 'Student', 'S104', 'academic:year', '3'
+
+put 'Student', 'S105', 'personal:name', 'Kabir Malik'
+put 'Student', 'S105', 'personal:city', 'Meerut'
+put 'Student', 'S105', 'academic:course', 'BCA'
+put 'Student', 'S105', 'academic:year', '1'
+
+scan 'Student'
+get 'Student', 'S101'

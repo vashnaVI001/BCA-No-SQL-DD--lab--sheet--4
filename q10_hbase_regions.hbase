@@ -1,0 +1,9 @@
+# Q10: Create initial regions using split keys
+# This creates three initial regions with split points M and T.
+create 'RegionDemo', 'data', SPLITS => ['M', 'T']
+put 'RegionDemo', 'A001', 'data:value', 'Region below M'
+put 'RegionDemo', 'N001', 'data:value', 'Region M to T'
+put 'RegionDemo', 'Z001', 'data:value', 'Region at/above T'
+scan 'RegionDemo'
+# Inspect region assignment/status with HBase administrative tools or the HBase UI.
+# RegionServers host regions and serve reads/writes; HBase may split regions as they grow.
